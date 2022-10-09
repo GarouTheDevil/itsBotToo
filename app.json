@@ -19,7 +19,7 @@
         "HEROKU_API_KEY": {
             "description": "get a Heroku API key from http://dashboard.heroku.com/account",
             "required": false}
-},
+    },
     "buildpacks": [
         {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"},
         {"url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab.git"},
@@ -29,7 +29,12 @@
         {"url": "https://github.com/heroku/heroku-buildpack-apt.git"},
         {"url": "https://github.com/subinps/heroku-buildpack-nodejs"},
         {"url": "heroku/python"}
-
-"stack": "heroku-20"    
-]
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "heroku-20"
 }
